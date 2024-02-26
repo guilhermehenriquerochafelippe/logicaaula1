@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--nome: guiilherme henrique rocha felippe turma: 3j
+-->
+<html lang="pt-br">
+<head>
+    <title>primos v1 while</title>
+    <meta charset="utf-8">
+    <script>
+        function recebenumero(){
+            var canvas=document.getElementById('meucanvas');
+            if(canvas.getcontext){
+                var cntxt=canvas.getcontext('2d');
+                var maxwindth=300;
+                var lineheigth=35;
+                var x=(canvas.width-maxwindth)/2;
+                var y=60;
+                var grad=cntxt.createlineargradient(0, 0, canvas.width, 0);
+                grad.addcolorstop(0, "rgb(255, 0, 0)");
+                grad.addcolorstop(0.5, "rgb(255, 255, 255)");
+                grad.addcolorstop(1, "rgb(0, 0, 0)");
+
+                var n1=parseInt(document.getElementById("numero1").value, 10);
+                cntxt.fillstyle="rgb(255, 255, 255)";
+                cntxt.fillrect(0, 0, canvas.width, canvas.height);
+                cntxt.font="30px comic sans ms";
+                cntxt.fillstyle=grad;
+                primo(cntxt, n1, x, y);
+            }
+        }
+        function primo(cntxt, n1, x, y){
+            
+        }
+
+       
+    </script>
+</head>
+<body>
+    <div>
+        <h1>primos</h1>
+        <label style="font-size:20px;">numero1</label>
+        <label type="text"id="numero1"autofocus><br>
+        <button onclick="recebenumero()">primo?</button><br><br>
+        <canvas id="meucanvas" windth="400" height="400" style="border:1px solid #000000; background-color: white;"></canvas>    
+    </div>
+</body>
+
+</html>
